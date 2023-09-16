@@ -1,0 +1,60 @@
+.grid-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem;
+}
+
+table{
+    width: 85%;
+    display: block;
+    margin: auto;
+}
+
+
+thead{
+    width: 100%;
+    display: block;
+}
+
+.heading-row{
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem;
+    padding: 1rem;
+}
+
+.heading-row th{
+    width: 18%;
+}
+
+th{
+    color: var(--grey);
+    margin-left: 1rem;
+}
+
+.th-Name{
+    width: 3rem !important;
+    margin-right: 2rem;
+}
+
+.align-left{
+    text-align: left;
+}
+
+.align-right{
+    text-align: right;
+}
+
+.align-center{
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .heading-row{
+        display: none;
+    }
+}
