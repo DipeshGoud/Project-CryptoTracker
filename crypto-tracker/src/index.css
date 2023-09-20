@@ -10,6 +10,10 @@
   --red: #f94141;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -61,5 +65,14 @@ img {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
+}
+
+.dark-grey-wrapper{
+  display: block;
+  width: 90%;
+  background-color: var(--darkgrey);
+  margin: 1.5rem auto;
+  border-radius: 0.8rem;
+  padding: 0.5rem 1rem;
 }
 

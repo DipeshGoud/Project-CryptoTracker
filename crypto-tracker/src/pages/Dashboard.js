@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import TabsComponent from '../components/DashboardPage/Tabs';
 import Search from '../components/DashboardPage/Search';
 import PaginationComponent from '../components/DashboardPage/Pagination';
+import Loader from '../components/Common/Loader';
+import BackToTop from '../components/Common/BackToTop';
 
 function DashboardPage() {
     // State variables
@@ -11,6 +13,8 @@ function DashboardPage() {
     let [PaginationCoins, setPaginationCoins] = useState([]); // Holds coins data for the current page
     const [search, setSearch] = useState(''); // Holds the search input value
     const [page, setPage] = useState(1); // Holds the current page number
+    const [loading, setLoading] = useState(true); // Holds the loading state
+
 
     // Function to handle page changes
     const handlePageChange = (event, value) => {
@@ -39,16 +43,27 @@ function DashboardPage() {
             .then(res => {
                 setCoins(res.data); // Set the coins data
                 setPaginationCoins(res.data.slice(0, 12)); // Set the coins data for the initial page (first 12 coins)
+                setLoading(false); // Set the loading state to false
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                console.error(error);
+                setLoading(false); // Set the loading state to false
+            });
     }, []);
 
     return (
         <div>
             <Header />
-            <Search search={search} onSearchChange={onSearchChange} />
-            <TabsComponent coins={search ? filteredCoins : PaginationCoins} />
-            {!search && <PaginationComponent page={page} handlePageChange={handlePageChange} />}
+            <BackToTop />
+            {loading ? (
+                <Loader />
+            ) : (
+                <>
+                    <Search search={search} onSearchChange={onSearchChange} />
+                    <TabsComponent coins={search ? filteredCoins : PaginationCoins} />
+                    {!search && <PaginationComponent page={page} handlePageChange={handlePageChange} />}
+                </>
+            )}
         </div>
     );
 }

@@ -1,0 +1,22 @@
+
+.coin-info-heading{
+    margin: 1rem;
+}
+
+.coin-info-desc{
+    margin: 1rem;
+}
+
+.coin-info-desc a{
+    text-decoration: underline !important;
+}
+
+.coin-info-desc a:hover{
+    color: var(--primary) !important;
+    text-decoration: none !important;
+}
+
+.read-more{
+    margin: 0.5rem;
+    color: var(--grey);
+}
