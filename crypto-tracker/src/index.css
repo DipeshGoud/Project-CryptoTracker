@@ -73,6 +73,14 @@ img {
   background-color: var(--darkgrey);
   margin: 1.5rem auto;
   border-radius: 0.8rem;
-  padding: 0.5rem 1rem;
 }
 
+.dark-grey-wrapper-2{
+  display: block;
+  width: 90%;
+  box-sizing: border-box;
+  background-color: var(--darkgrey);
+  margin: 0.5rem auto;
+  border-radius: 0.8rem;
+  padding: 1rem;
+}

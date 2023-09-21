@@ -9,7 +9,7 @@ function Coininfo({ heading, desc }) {
     const [showLongDesc, setShowLongDesc] = useState(false);
 
     return (
-        <div className='dark-grey-wrapper'>
+        <div className='dark-grey-wrapper-2'>
             <h2 className='coin-info-heading'>{heading}</h2>
             {desc.length > 300 ?
                 <p
