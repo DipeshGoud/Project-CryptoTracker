@@ -12,6 +12,7 @@ import SelectDays from '../components/Coin/SelectDays';
 import { settingChartData } from '../functions/settingChartData';
 import TogglePriceType from '../components/Coin/PriceType';
 import Chart from '../components/Common/Chart';
+import BackToTop from '../components/Common/BackToTop';
 
 function CoinPage() {
     // Get the 'id' parameter from the URL using useParams
@@ -65,6 +66,7 @@ function CoinPage() {
     return (
         <div>
             <Header />
+            <BackToTop />
             {loading ? (
                 <Loader />
             ) : (

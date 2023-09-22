@@ -85,3 +85,42 @@
         display: block;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .list-table {
+        width: 95%;
+    }
+
+    .list-row td{
+        font-size: 70% !important;
+    }
+
+    .list-row{
+        margin: 5px;
+        justify-content: flex-start;
+    }
+
+    .td-image{
+        margin: 0;
+    }
+
+    .td-volume{
+        display: none;
+    }
+
+    .mobile-tmk{
+        display: none;
+    }
+
+    .chip-flex{
+        display: none;
+    }
+
+    .price-chip{
+        display: none;
+    }
+
+    td{
+        margin-right: 1rem;
+    }
+}

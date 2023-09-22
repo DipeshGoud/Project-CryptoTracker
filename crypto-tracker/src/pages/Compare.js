@@ -11,6 +11,7 @@ import List from '../components/DashboardPage/List';
 import { settingChartData } from '../functions/settingChartData';
 import LineChart from '../components/Coin/LineChart';
 import TogglePriceType from '../components/Coin/PriceType';
+import BackToTop from '../components/Common/BackToTop';
 
 function Compare() {
     // State variables
@@ -97,6 +98,7 @@ function Compare() {
     return (
         <div>
             <Header />
+            <BackToTop />
             {loading ? (
                 <Loader />
             ) : (
