@@ -3,9 +3,18 @@ import './styles.css'
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import { Link } from 'react-router-dom';
+import Watchlist from '../../WatchList';
+import { motion } from "framer-motion";
+
 
 function Grid({ coin }) {
-    return (
+    return (<motion.div
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+            type: 'smooth',
+            duration: 0.5,
+        }}>
         <Link to={`/coin/${coin.id}`}>
             <div className={`grid-container ${coin.price_change_percentage_24h < 0 && "grid-container-red"}`}>
                 <div className='info-flex'>
@@ -14,6 +23,7 @@ function Grid({ coin }) {
                         <p className='coin-symbol'>{coin.symbol}</p>
                         <p className='coin-name'>{coin.name}</p>
                     </div>
+                    <div className='watchlist-container'><Watchlist coinId={coin.id} /></div>
                 </div>
                 {coin.price_change_percentage_24h > 0 ?
                     (<div className='chip-flex'>
@@ -45,6 +55,7 @@ function Grid({ coin }) {
                 </div>
             </div>
         </Link>
+    </motion.div>
     );
 }
 
