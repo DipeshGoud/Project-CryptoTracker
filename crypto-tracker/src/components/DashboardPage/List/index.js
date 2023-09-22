@@ -5,6 +5,7 @@ import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import { Tooltip } from '@mui/material';
 import { convertNumber } from '../../../functions/convertNumber';
 import { Link } from 'react-router-dom';
+import Watchlist from '../../WatchList';
 
 function List({ coin, Key }) {
     return (
@@ -68,6 +69,10 @@ function List({ coin, Key }) {
                 <td className='mobile-tmk'>
                     <Tooltip title='Market Cap'><p className='total_volume_marketcap right-align'>
                         {convertNumber(coin.market_cap)}</p></Tooltip>
+                </td>
+
+                <td>
+                    <Watchlist coinId={coin.id} />
                 </td>
             </tr>
         </Link>

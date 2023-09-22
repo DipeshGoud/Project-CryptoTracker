@@ -8,11 +8,11 @@ import List from '../components/DashboardPage/List';
 import Coininfo from '../components/Coin/Coininfo';
 import { getCoinData } from '../functions/getCoinData';
 import { getCoinPrice } from '../functions/getCoinPrice';
-import LineChart from '../components/Coin/LineChart';
 import { convertDate } from '../functions/convertDate';
 import SelectDays from '../components/Coin/SelectDays';
 import { settingChartData } from '../functions/settingChartData';
 import TogglePriceType from '../components/Coin/PriceType';
+import Chart from '../components/Common/Chart';
 
 
 function CoinPage() {
@@ -75,7 +75,7 @@ function CoinPage() {
                     <div className='dark-grey-wrapper-2'>
                         <SelectDays days={days} handleDaysChange={handleDaysChange} />
                         <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
-                        <LineChart chartData={chartData} priceType={priceType} multiAxis={false}/>
+                        <Chart chartData={chartData} priceType={priceType} multiAxis={false}/>
                     </div>
                     <div>
                         <Coininfo heading={coinData.name} desc={coinData.desc} />
