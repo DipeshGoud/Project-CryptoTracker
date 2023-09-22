@@ -100,11 +100,13 @@
     border-radius: 50%;
     height: 2rem;
     width: 2rem;
+    min-width: 2rem;
+    min-height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--red);
-    margin-top: 1rem;
+
 }
 
 .info-container {
@@ -121,4 +123,8 @@
     color: var(--grey);
     font-size: 0.8rem;
     font-weight: 500;
+}
+
+.watchlist-container{
+    margin-left: auto;
 }

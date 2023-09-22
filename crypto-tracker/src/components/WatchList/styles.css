@@ -1,0 +1,23 @@
+.watchlist-icon-container{
+    border: 2px solid var(--primary);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.watchlist-icon-container:hover{
+    background-color: gray;
+    transition: all 0.3s ease;
+}
+
+.gray{
+    border: 2px solid gray;
+}
+
+.gray:hover{
+    background-color: var(--primary);
+    transition: all 0.3s ease;
+}

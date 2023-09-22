@@ -8,7 +8,6 @@ import List from '../components/DashboardPage/List';
 import Coininfo from '../components/Coin/Coininfo';
 import { getCoinData } from '../functions/getCoinData';
 import { getCoinPrice } from '../functions/getCoinPrice';
-import { convertDate } from '../functions/convertDate';
 import SelectDays from '../components/Coin/SelectDays';
 import { settingChartData } from '../functions/settingChartData';
 import TogglePriceType from '../components/Coin/PriceType';

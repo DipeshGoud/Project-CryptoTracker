@@ -61,6 +61,7 @@ export default function TabsComponent({ coins }) {
                                 <th className='th-Price align-center'>Price</th>
                                 <th className='th-Volume align-right'>24h Volume</th>
                                 <th className='th-Cap align-right'>Market Cap</th>
+                                <th className='watchlist'></th>
                             </tr>
                         </thead>
                     {coins.map((coin, i) => {
