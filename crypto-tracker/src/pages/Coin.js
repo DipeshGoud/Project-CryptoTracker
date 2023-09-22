@@ -12,7 +12,7 @@ import LineChart from '../components/Coin/LineChart';
 import { convertDate } from '../functions/convertDate';
 import SelectDays from '../components/Coin/SelectDays';
 import { settingChartData } from '../functions/settingChartData';
-import PriceType from '../components/Coin/PriceType';
+import TogglePriceType from '../components/Coin/PriceType';
 
 
 function CoinPage() {
@@ -74,8 +74,8 @@ function CoinPage() {
                     </div>
                     <div className='dark-grey-wrapper-2'>
                         <SelectDays days={days} handleDaysChange={handleDaysChange} />
-                        <PriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
-                        <LineChart chartData={chartData} priceType={priceType}/>
+                        <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
+                        <LineChart chartData={chartData} priceType={priceType} multiAxis={false}/>
                     </div>
                     <div>
                         <Coininfo heading={coinData.name} desc={coinData.desc} />

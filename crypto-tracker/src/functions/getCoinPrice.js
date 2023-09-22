@@ -2,7 +2,9 @@ import axios from "axios";
 
 export const getCoinPrice = (id, days, priceType) => {
     return axios
-        .get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`)
+        .get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`,
+        {crossDomain: true}
+        )
         .then((res) => {
             if (res.status === 200) {
                 return res.data[priceType];

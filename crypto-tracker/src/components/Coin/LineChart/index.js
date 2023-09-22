@@ -16,11 +16,27 @@ function LineChart({ chartData, priceType, multiAxis }) {
             intersect: false,
         },
         scales: {
-            y: {
+            crypto1: { // Left y-axis
+                type: "linear",
+                display: true,
+                position: "left",
                 ticks: {
                     callback: function (value, index, values) {
-                        if(priceType === 'prices') return "$" + value.toLocaleString();
-                        else{
+                        if (priceType === 'prices') return "$" + value.toLocaleString();
+                        else {
+                            return "$" + convertNumber(value);
+                        }
+                    },
+                },
+            }, 
+            crypto2: { // Right y-axis
+                type: "linear",
+                display: true,
+                position: "right",
+                ticks: {
+                    callback: function (value, index, values) {
+                        if (priceType === 'prices') return "$" + value.toLocaleString();
+                        else {
                             return "$" + convertNumber(value);
                         }
                     },
