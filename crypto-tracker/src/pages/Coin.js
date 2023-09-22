@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import Header from '../components/Header'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import Header from '../components/Header';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Loader from '../components/Common/Loader';
 import { coinobject } from '../functions/coinObject';
@@ -13,25 +13,24 @@ import { settingChartData } from '../functions/settingChartData';
 import TogglePriceType from '../components/Coin/PriceType';
 import Chart from '../components/Common/Chart';
 
-
 function CoinPage() {
-
+    // Get the 'id' parameter from the URL using useParams
     const { id } = useParams();
     const [loading, setLoading] = useState(true); // Holds the loading state
     const [coinData, setCoinData] = useState({}); // Holds the coin data
-    const [days, setDays] = useState(7); // Holds the number of days to show on the chart   
-    const [chartData, setChartData] = useState({}); // Holds the chart data   
+    const [days, setDays] = useState(7); // Holds the number of days to show on the chart
+    const [chartData, setChartData] = useState({}); // Holds the chart data
     const [priceType, setPriceType] = useState('prices');
 
-
+    // Update the document title when the 'id' changes
     useEffect(() => {
-    document.title = `${id} | Crypto Tracker`
-    if (id) {
-        getData();
-    }
-}, [id, days]); // Include 'days' as a dependency
+        document.title = `${id} | Crypto Tracker`;
+        if (id) {
+            getData();
+        }
+    }, [id, days]); // Include 'days' as a dependency
 
-
+    // Function to fetch data for the selected cryptocurrency
     async function getData() {
         const data = await getCoinData(id);
         if (data) {
@@ -44,6 +43,7 @@ function CoinPage() {
         }
     }
 
+    // Handle changes in the number of days
     const handleDaysChange = async (event) => {
         const newDays = event.target.value;
         setDays(newDays); // Update state first
@@ -53,6 +53,7 @@ function CoinPage() {
         }
     };
 
+    // Handle changes in the selected price type
     const handlePriceTypeChange = async (event, newType) => {
         setPriceType(newType);
         const prices = await getCoinPrice(id, days, newType); // Use the updated value
@@ -60,28 +61,29 @@ function CoinPage() {
             settingChartData(setChartData, prices);
         }
     };
-    
 
     return (
         <div>
             <Header />
-            {loading ?
+            {loading ? (
                 <Loader />
-                : <>
+            ) : (
+                <>
                     <div className='dark-grey-wrapper'>
                         <List coin={coinData} />
                     </div>
                     <div className='dark-grey-wrapper-2'>
                         <SelectDays days={days} handleDaysChange={handleDaysChange} />
-                        <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
-                        <Chart chartData={chartData} priceType={priceType} multiAxis={false}/>
+                        <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange} />
+                        <Chart chartData={chartData} priceType={priceType} multiAxis={false} />
                     </div>
                     <div>
                         <Coininfo heading={coinData.name} desc={coinData.desc} />
                     </div>
-                </>}
+                </>
+            )}
         </div>
-    )
+    );
 }
 
-export default CoinPage
+export default CoinPage;

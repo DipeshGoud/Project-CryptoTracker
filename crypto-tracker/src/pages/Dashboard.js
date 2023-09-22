@@ -10,17 +10,16 @@ import { getCoins } from '../functions/getCoins';
 
 function DashboardPage() {
     // State variables
-    let [coins, setCoins] = useState([]); // Holds all coins data
-    let [PaginationCoins, setPaginationCoins] = useState([]); // Holds coins data for the current page
+    const [coins, setCoins] = useState([]); // Holds all coins data
+    const [paginationCoins, setPaginationCoins] = useState([]); // Holds coins data for the current page
     const [search, setSearch] = useState(''); // Holds the search input value
     const [page, setPage] = useState(1); // Holds the current page number
     const [loading, setLoading] = useState(true); // Holds the loading state
 
-
     // Function to handle page changes
     const handlePageChange = (event, value) => {
         setPage(value); // Update the current page number
-        var previousIndex = (value - 1) * 12; // Calculate the starting index for the current page
+        const previousIndex = (value - 1) * 12; // Calculate the starting index for the current page
         setPaginationCoins(coins.slice(previousIndex, previousIndex + 12)); // Set the coins data for the current page
     };
 
@@ -30,7 +29,7 @@ function DashboardPage() {
     }
 
     // Filter coins based on search input
-    var filteredCoins = coins.filter(coin =>
+    const filteredCoins = coins.filter(coin =>
         coin.name.toLowerCase().includes(search.toLowerCase()) ||
         coin.symbol.toLowerCase().includes(search.toLowerCase())
     );
@@ -58,7 +57,7 @@ function DashboardPage() {
             ) : (
                 <>
                     <Search search={search} onSearchChange={onSearchChange} />
-                    <TabsComponent coins={search ? filteredCoins : PaginationCoins} />
+                    <TabsComponent coins={search ? filteredCoins : paginationCoins} />
                     {!search && <PaginationComponent page={page} handlePageChange={handlePageChange} />}
                 </>
             )}

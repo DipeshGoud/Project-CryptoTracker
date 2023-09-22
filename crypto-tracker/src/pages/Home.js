@@ -1,6 +1,6 @@
-import React from 'react'
-import Header from '../components/Header'
-import MainComponent from '../components/LandingPage/MainComponent'
+import React from 'react';
+import Header from '../components/Header';
+import MainComponent from '../components/LandingPage/MainComponent';
 
 function HomePage() {
     return (
@@ -8,7 +8,7 @@ function HomePage() {
             <Header />
             <MainComponent />
         </div>
-    )
+    );
 }
 
-export default HomePage
+export default HomePage;
