@@ -4,6 +4,8 @@
 
 The Crypto Tracker Website is a real-time cryptocurrency tracking platform designed to help users stay up-to-date with the latest cryptocurrency prices, market volumes, and trends. With the rapid fluctuations in the cryptocurrency market, having a centralized dashboard for tracking various cryptocurrencies is essential for making informed investment decisions.
 
+The primary goal of this project is to create a user-friendly and feature-rich cryptocurrency tracking dashboard using a public API.
+
 ### Features
 
 - **Real-time Data**: Display real-time prices of various cryptocurrencies and key metrics.
